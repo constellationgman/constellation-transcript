@@ -5,7 +5,7 @@ Central configuration for Constellation Transcript.
 from pathlib import Path
 
 PROGRAM_NAME = "Constellation Transcript"
-VERSION = "0.8.0"
+VERSION = "0.8.1"
 
 OUTPUT_DIRECTORY = (
     Path.home()

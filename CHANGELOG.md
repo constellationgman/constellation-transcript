@@ -6,6 +6,26 @@ This project follows a milestone-based development process toward Version 1.0.
 
 ---
 
+## Version 0.8.1 — Android Share Integration
+
+Released: July 2026
+
+### Added
+- Android Share integration through Termux
+- `android/termux-url-opener` bridge script
+- Direct handoff of shared YouTube URLs to Constellation Transcript
+
+### Improved
+- Removed the need to copy and paste URLs manually
+- Preserved the existing transcript engine without duplicating logic
+- Kept Android integration isolated from transcript processing
+
+### Security
+- No listening network services added
+- No telemetry added
+- No remote administration added
+- Shared URLs continue through the existing validation system
+
 ## Version 0.8.0 — Dual Input Support
 
 Released: July 2026

@@ -9,7 +9,7 @@ plain-text files on an Android device through Termux>
 
 ## Development Status
 
-**Current Version:** 0.8.0
+**Current Version:** 0.8.1
 
 ### Completed
 
@@ -22,15 +22,18 @@ plain-text files on an Android device through Termux>
 - ✅ 0.7.0 – Project Identity
 - ✅ 0.7.1 – GitHub Integration
 - ✅ 0.8.0 – Dual Input Support (Interactive + Command Line)
+- ✅ 0.8.1 – Android Share Integration
 
 ### Next Milestones
 
-- ⏳ 0.8.1 – Android Share Integration
+- ⏳ 0.9.0 – No-caption testing and fallback planning
 - ⏳ 0.9.0 – Home Screen Launcher
 - ⏳ 1.0.0 – Stable Release
 
 ## Current capabilities
 
+- Accepts YouTube links directly from Android's Share menu
+- Runs the transcript workflow without manual copy and paste
 - Validates approved HTTPS YouTube URLs
 - Retrieves public video metadata
 - Detects manual and automatic captions
