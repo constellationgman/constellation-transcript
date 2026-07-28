@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -u
+
+PROJECT_DIR="$HOME/youtube2text"
+PROGRAM="$PROJECT_DIR/constellation_transcript.py"
+
+if [ "$#" -ne 1 ]; then
+    echo "Error: Expected exactly one shared YouTube URL."
+    exit 2
+fi
+
+if [ ! -f "$PROGRAM" ]; then
+    echo "Error: Constellation Transcript was not found."
+    exit 1
+fi
+
+cd "$PROJECT_DIR" || exit 1
+exec python "$PROGRAM" "$1"
