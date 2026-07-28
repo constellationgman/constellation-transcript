@@ -1,11 +1,11 @@
 """
-Central configuration for YouTube to Text.
+Central configuration for Constellation Transcript.
 """
 
 from pathlib import Path
 
 PROGRAM_NAME = "Constellation Transcript"
-VERSION = "0.7.0"
+VERSION = "0.8.0"
 
 OUTPUT_DIRECTORY = (
     Path.home()

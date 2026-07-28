@@ -1,5 +1,5 @@
 """
-Input validation for YouTube to Text.
+Input validation for Constellation Transcript.
 """
 
 from urllib.parse import urlparse
@@ -49,12 +49,24 @@ def is_valid_youtube_url(value: str) -> bool:
     )
 
 
+def validate_youtube_url(value: str) -> str:
+    """Return a cleaned approved URL or raise ValueError."""
+    cleaned = value.strip()
+
+    if not is_valid_youtube_url(cleaned):
+        raise ValueError(
+            "That is not an accepted YouTube HTTPS link."
+        )
+
+    return cleaned
+
+
 def get_valid_youtube_url() -> str:
     """Prompt until the user enters an approved YouTube URL."""
     while True:
-        value = input("Paste YouTube URL: ").strip()
+        value = input("Paste YouTube URL: ")
 
-        if is_valid_youtube_url(value):
-            return value
-
-        print("That is not an accepted YouTube HTTPS link. Please try again.")
+        try:
+            return validate_youtube_url(value)
+        except ValueError as error:
+            print(f"{error} Please try again.")

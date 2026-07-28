@@ -14,9 +14,11 @@ Security boundaries:
 - No media download when captions are available
 """
 
+import sys
+
 from config import PROGRAM_NAME, VERSION
 from export import ExportError, export_transcript
-from security import get_valid_youtube_url
+from security import get_valid_youtube_url, validate_youtube_url
 from transcript import TranscriptError, get_transcript
 from youtube_client import YouTubeClientError, get_video_info
 
@@ -35,12 +37,31 @@ def format_duration(seconds: int | None) -> str:
     return f"{minutes}:{remaining_seconds:02d}"
 
 
-def main() -> None:
+def get_input_url(arguments: list[str]) -> str:
+    """
+    Read a YouTube URL from the command line or prompt interactively.
+
+    Android Share integration supplies exactly one command-line value.
+    """
+    if len(arguments) == 1:
+        return get_valid_youtube_url()
+
+    if len(arguments) > 2:
+        raise ValueError("Only one YouTube URL may be supplied.")
+
+    return validate_youtube_url(arguments[1])
+
+
+def main() -> int:
     print(PROGRAM_NAME)
     print(f"Version {VERSION}")
     print()
 
-    url = get_valid_youtube_url()
+    try:
+        url = get_input_url(sys.argv)
+    except ValueError as error:
+        print(f"Error: {error}")
+        return 2
 
     print()
     print("Retrieving public video information...")
@@ -50,7 +71,7 @@ def main() -> None:
     except YouTubeClientError as error:
         print()
         print(f"Error: {error}")
-        return
+        return 1
 
     print()
     print("=" * 48)
@@ -68,7 +89,7 @@ def main() -> None:
         print()
         print("No captions are available.")
         print("No file was created.")
-        return
+        return 1
 
     print()
     print("Retrieving English captions...")
@@ -79,7 +100,7 @@ def main() -> None:
         print()
         print(f"Error: {error}")
         print("No file was created.")
-        return
+        return 1
 
     print()
     print(f"Caption language: {transcript.language}")
@@ -95,7 +116,7 @@ def main() -> None:
     except ExportError as error:
         print()
         print(f"Error: {error}")
-        return
+        return 1
 
     print()
     print("=" * 48)
@@ -104,6 +125,8 @@ def main() -> None:
     print(f"Saved to: {output_path}")
     print("Verification: Passed")
 
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
