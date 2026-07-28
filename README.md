@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="300" alt="Constellation Transcript logo">
+</p>
+
 # Constellation Transcript
 
 Constellation Transcript converts available YouTube captions into verified
