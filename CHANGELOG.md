@@ -6,6 +6,24 @@ This project follows a milestone-based development process toward Version 1.0.
 
 ---
 
+## Version 0.8.0 — Dual Input Support
+
+Released: July 2026
+
+### Added
+- Command-line URL support
+- Shared URL validation function
+- Interactive and non-interactive execution support
+
+### Improved
+- Unified URL validation path
+- Prepared the application for Android Share integration
+
+### Security
+- Preserved local-only execution model
+- No new listening services
+- No telemetry introduced
+
 ## Version 0.7.0 — Project Identity
 
 Released: July 2026
