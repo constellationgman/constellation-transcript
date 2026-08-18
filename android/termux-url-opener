@@ -2,7 +2,7 @@
 
 set -u
 
-PROJECT_DIR="$HOME/youtube2text"
+PROJECT_DIR="$HOME/constellation-transcript"
 PROGRAM="$PROJECT_DIR/constellation_transcript.py"
 
 if [ "$#" -ne 1 ]; then
