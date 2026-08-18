@@ -4,12 +4,12 @@
 
 # Constellation Transcript
 
-Constellation Transcript converts available YouTube captions into verified
-plain-text files on an Android device through Termux>
+Constellation Transcript is a lightweight Android/Termux utility that converts
+available YouTube captions into verified plain-text transcripts.
 
 ## Development Status
 
-**Current Version:** 0.8.1
+**Current Version:** 0.9.0
 
 ### Completed
 
@@ -21,16 +21,15 @@ plain-text files on an Android device through Termux>
 - ✅ 0.6.0 – Secure Export System
 - ✅ 0.7.0 – Project Identity
 - ✅ 0.7.1 – GitHub Integration
-- ✅ 0.8.0 – Dual Input Support (Interactive + Command Line)
+- ✅ 0.8.0 – Dual Input Support
 - ✅ 0.8.1 – Android Share Integration
+- ✅ 0.9.0 – Release Candidate Cleanup
 
-### Next Milestones
+### Next Milestone
 
-- ⏳ 0.9.0 – No-caption testing and fallback planning
-- ⏳ 0.9.0 – Home Screen Launcher
-- ⏳ 1.0.0 – Stable Release
+- ⏳ 1.0.0 – First Stable Captions-Only Release
 
-## Current capabilities
+## Current Capabilities
 
 - Accepts YouTube links directly from Android's Share menu
 - Runs the transcript workflow without manual copy and paste
@@ -46,7 +45,17 @@ plain-text files on an Android device through Termux>
 - Accepts YouTube URLs from the command line
 - Supports both interactive and automated execution
 
-## Security design
+## Version 1.0 Scope
+
+Constellation Transcript 1.0 is intentionally captions-only.
+
+If usable YouTube captions are unavailable, the program stops without
+downloading the video's audio or video.
+
+Offline speech recognition, personal-media transcription, cloud processing,
+and remote processing are not part of Version 1.0.
+
+## Security Design
 
 - Local execution only
 - No listening network services
@@ -58,15 +67,25 @@ plain-text files on an Android device through Termux>
 - No shell execution using untrusted URLs
 - New capabilities require review before implementation
 
-## Output location
+## Output Location
 
 Transcripts are saved to:
 
+```text
 Documents/YouTubeText
+```
 
-## Run manually
+## Run Manually
 
 From the project directory:
 
 ```bash
 python constellation_transcript.py
+```
+
+The recommended everyday workflow is:
+
+**YouTube → Share → Termux**
+
+Constellation Transcript then retrieves available captions and saves the
+verified transcript automatically.

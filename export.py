@@ -1,5 +1,5 @@
 """
-Transcript export interface for YouTube to Text.
+Transcript export interface for Constellation Transcript.
 """
 
 from pathlib import Path

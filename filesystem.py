@@ -1,5 +1,5 @@
 """
-Controlled filesystem operations for YouTube to Text.
+Controlled filesystem operations for Constellation Transcript.
 
 This is the only module permitted to create final transcript files.
 """

@@ -1,5 +1,5 @@
 """
-Caption retrieval and parsing for YouTube to Text.
+Caption retrieval and parsing for Constellation Transcript.
 
 Temporary subtitle files are created only inside the local cache folder
 and are deleted after being read.

@@ -6,6 +6,29 @@ This project follows a milestone-based development process toward Version 1.0.
 
 ---
 
+## Version 0.9.0 — Release Candidate Cleanup
+
+Released: August 2026
+
+### Fixed
+- Updated the temporary cache path after the project directory was renamed
+- Removed stale project naming from module documentation
+- Corrected README formatting and roadmap information
+- Synchronized documentation with the captions-only Version 1.0 scope
+
+### Confirmed
+- Android Share remains the primary supported workflow
+- Caption extraction remains lightweight
+- No audio or video fallback was added
+
+### Security
+- No listening services added
+- No telemetry added
+- No remote administration added
+- No new permissions added
+
+---
+
 ## Version 0.8.1 — Android Share Integration
 
 Released: July 2026

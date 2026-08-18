@@ -5,7 +5,7 @@ Central configuration for Constellation Transcript.
 from pathlib import Path
 
 PROGRAM_NAME = "Constellation Transcript"
-VERSION = "0.8.1"
+VERSION = "0.9.0"
 
 OUTPUT_DIRECTORY = (
     Path.home()
@@ -17,7 +17,7 @@ OUTPUT_DIRECTORY = (
 
 CACHE_DIRECTORY = (
     Path.home()
-    / "youtube2text"
+    / "constellation-transcript"
     / "cache"
 )
 
