@@ -187,5 +187,5 @@ Released: July 2026
 Planned milestones:
 
 - **0.8.0** — Android Share Integration
-- **0.9.0** — Home Screen Launcher
+- **0.9.0** — Release Candidate Cleanup
 - **1.0.0** — Stable Release
