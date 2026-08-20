@@ -105,8 +105,8 @@ class SecurityTests(unittest.TestCase):
             )
         )
 
-    def test_accepts_playlist_url(self):
-        self.assertTrue(
+    def test_rejects_playlist_url(self):
+        self.assertFalse(
             is_valid_youtube_url(
                 "https://www.youtube.com/playlist?list=TEST"
             )

@@ -38,13 +38,11 @@ def is_valid_youtube_url(value: str) -> bool:
         "/watch",
         "/shorts",
         "/live",
-        "/playlist",
     } or parsed.path.startswith(
         (
             "/watch/",
             "/shorts/",
             "/live/",
-            "/playlist/",
         )
     )
 
