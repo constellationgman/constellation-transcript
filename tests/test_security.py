@@ -91,7 +91,33 @@ class SecurityTests(unittest.TestCase):
         self.assertFalse(
             is_valid_youtube_url("javascript:alert(1)")
         )
+    def test_accepts_shorts_url(self):
+        self.assertTrue(
+            is_valid_youtube_url(
+                "https://www.youtube.com/shorts/dQw4w9WgXcQ"
+            )
+        )
 
+    def test_accepts_live_url(self):
+        self.assertTrue(
+            is_valid_youtube_url(
+                "https://www.youtube.com/live/dQw4w9WgXcQ"
+            )
+        )
+
+    def test_accepts_playlist_url(self):
+        self.assertTrue(
+            is_valid_youtube_url(
+                "https://www.youtube.com/playlist?list=TEST"
+            )
+        )
+
+    def test_accepts_watch_url_with_playlist_context(self):
+        self.assertTrue(
+            is_valid_youtube_url(
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=TEST"
+            )
+        )
 
 if __name__ == "__main__":
     unittest.main()
