@@ -86,31 +86,37 @@ def get_transcript(url: str) -> TranscriptResult:
     Manually supplied English subtitles are preferred. Automatic English
     captions are used when manual captions are unavailable.
     """
-    CACHE_DIRECTORY.mkdir(parents=True, exist_ok=True)
-
-    temporary_directory = Path(
-        tempfile.mkdtemp(prefix="job-", dir=CACHE_DIRECTORY)
-    )
-
-    output_template = str(temporary_directory / "%(id)s.%(ext)s")
-
-    options = {
-        "quiet": True,
-        "no_warnings": True,
-        "skip_download": True,
-        "noplaylist": True,
-        "writesubtitles": True,
-        "writeautomaticsub": True,
-        "subtitleslangs": ["en", "en-US", "en-GB"],
-        "subtitlesformat": "vtt",
-        "outtmpl": output_template,
-    }
+    temporary_directory: Path | None = None
 
     try:
+        CACHE_DIRECTORY.mkdir(parents=True, exist_ok=True)
+
+        temporary_directory = Path(
+            tempfile.mkdtemp(prefix="job-", dir=CACHE_DIRECTORY)
+        )
+
+        output_template = str(
+            temporary_directory / "%(id)s.%(ext)s"
+        )
+
+        options = {
+            "quiet": True,
+            "no_warnings": True,
+            "skip_download": True,
+            "noplaylist": True,
+            "writesubtitles": True,
+            "writeautomaticsub": True,
+            "subtitleslangs": ["en", "en-US", "en-GB"],
+            "subtitlesformat": "vtt",
+            "outtmpl": output_template,
+        }
+
         with yt_dlp.YoutubeDL(options) as client:
             client.extract_info(url, download=True)
 
-        caption_files = sorted(temporary_directory.glob("*.vtt"))
+        caption_files = sorted(
+            temporary_directory.glob("*.vtt")
+        )
 
         if not caption_files:
             raise TranscriptError(
@@ -141,4 +147,8 @@ def get_transcript(url: str) -> TranscriptResult:
         ) from error
 
     finally:
-        shutil.rmtree(temporary_directory, ignore_errors=True)
+        if temporary_directory is not None:
+            shutil.rmtree(
+                temporary_directory,
+                ignore_errors=True,
+            )
