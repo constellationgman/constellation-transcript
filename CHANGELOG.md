@@ -2,7 +2,48 @@
 
 All notable changes to this project are documented in this file.
 
-This project follows a milestone-based development process toward Version 1.0.
+This project follows a milestone-based development and release process.
+
+---
+
+## Version 1.0.0 — First Stable Release
+
+Released: August 2026
+
+### Added
+- Automated regression test suite covering security, transcript parsing,
+  transcript retrieval, filesystem operations, export verification,
+  YouTube metadata handling, and main application behavior
+- Permanent project development, security, and phone-stability rules
+
+### Improved
+- Hardened transcript cache creation failures into controlled application errors
+- Confirmed temporary caption cleanup on successful and failed retrieval
+- Documented AI-assisted learning as a primary use for verified transcript text
+
+### Behavior
+- Processes exactly one selected YouTube video per invocation
+- Rejects pure YouTube playlist URLs
+- Allows a single video opened from within a playlist
+- Remains intentionally captions-only
+- Uses English caption variants for Version 1.0
+
+### Verified
+- Android Share workflow successfully creates verified transcripts
+- Pure playlist sharing is rejected before transcript processing
+- Single videos selected from playlists process normally
+- Repository and installed Android Share bridge match
+- Automated release test suite passes
+
+### Security
+- No listening network services
+- No remote administration
+- No telemetry or analytics
+- No hidden maintenance access
+- No automatic code updates
+- No cloud transcription
+- No bulk playlist processing
+- No new Android permissions
 
 ---
 
@@ -182,9 +223,7 @@ Released: July 2026
 
 ---
 
-# Road to Version 1.0
-
-Planned milestones:
+# Release Milestones
 
 - **0.8.0** — Android Share Integration
 - **0.9.0** — Release Candidate Cleanup

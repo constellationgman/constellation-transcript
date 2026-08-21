@@ -7,9 +7,12 @@
 Constellation Transcript is a lightweight Android/Termux utility that converts
 available YouTube captions into verified plain-text transcripts.
 
+Its primary purpose is to turn intentionally selected YouTube material into
+portable text suitable for reading, research, and AI-assisted learning.
+
 ## Development Status
 
-**Current Version:** 0.9.0
+**Current Version:** 1.0.0
 
 ### Completed
 
@@ -24,10 +27,7 @@ available YouTube captions into verified plain-text transcripts.
 - ✅ 0.8.0 – Dual Input Support
 - ✅ 0.8.1 – Android Share Integration
 - ✅ 0.9.0 – Release Candidate Cleanup
-
-### Next Milestone
-
-- ⏳ 1.0.0 – First Stable Captions-Only Release
+- ✅ 1.0.0 – First Stable Captions-Only Release
 
 ## Current Capabilities
 
@@ -47,9 +47,13 @@ available YouTube captions into verified plain-text transcripts.
 
 ## Version 1.0 Scope
 
-Constellation Transcript 1.0 is intentionally captions-only.
+Constellation Transcript 1.0 is intentionally captions-only and processes
+exactly one selected YouTube video per invocation.
 
-If usable YouTube captions are unavailable, the program stops without
+Pure playlist URLs are rejected. A single video opened from within a playlist
+remains supported and only that selected video is processed.
+
+If usable English YouTube captions are unavailable, the program stops without
 downloading the video's audio or video.
 
 Offline speech recognition, personal-media transcription, cloud processing,

@@ -158,22 +158,22 @@ Excluded from Version 1.0:
 - Audio/video fallback
 - Unreviewed new features
 
-## Known Pre-1.0 Review Items
+## Resolved Pre-1.0 Review Items
 
-The following were identified during the Version 0.9.0 architecture audit
-and should be handled through separate, testable tasks:
+The Version 0.9.0 architecture audit identified three release-blocking review
+items. All were resolved before Version 1.0:
 
-1. Cache/job directory creation in transcript.py occurs before the main
-   exception-handling block and should be tested for controlled failure.
+1. Cache/job directory creation failures are now converted into controlled
+   TranscriptError failures and are protected by an automated regression test.
 
-2. Pure YouTube playlist URLs are currently accepted by URL validation even
-   though Constellation Transcript is intended to process one video per
-   invocation.
+2. Pure YouTube playlist URLs are rejected. A single video opened from within
+   a playlist remains allowed, preserving the one-video-per-invocation rule.
 
-3. CHANGELOG.md contains a stale roadmap entry identifying Version 0.9.0 as
-   the Home Screen Launcher milestone.
+3. CHANGELOG.md roadmap history was corrected to identify Version 0.9.0 as the
+   Release Candidate Cleanup milestone.
 
-These items are observations, not authorization for broad refactoring.
+Future changes must preserve these resolved behaviors unless deliberately
+reviewed and approved.
 
 ## Release Principle
 
