@@ -10,6 +10,64 @@ available YouTube captions into verified plain-text transcripts.
 Its primary purpose is to turn intentionally selected YouTube material into
 portable text suitable for reading, research, and AI-assisted learning.
 
+## Installation
+
+Constellation Transcript 1.0 is captions-only software for Android/Termux.
+It runs locally on your phone and requires no account or cloud service.
+
+### 1. Install Python and Git
+
+In Termux:
+
+```bash
+pkg update
+pkg install python git
+```
+
+### 2. Clone the repository
+
+The Android Share bridge requires the repository at exactly this location:
+
+```bash
+git clone https://github.com/constellationgman/constellation-transcript.git ~/constellation-transcript
+```
+
+### 3. Install dependencies
+
+```bash
+cd ~/constellation-transcript
+python -m pip install -r requirements.txt
+```
+
+### 4. Grant storage permission
+
+Run the following command and accept the storage permission prompt when Android asks.
+
+```bash
+termux-setup-storage
+```
+
+This allows the program to write transcripts to Android shared storage.
+The output directory (`Documents/YouTubeText/`) is created automatically when needed.
+
+### 5. Install the Share bridge
+
+```bash
+mkdir -p ~/bin
+cp ~/constellation-transcript/android/termux-url-opener ~/bin/termux-url-opener
+chmod +x ~/bin/termux-url-opener
+```
+
+### Using Android Share
+
+Once the Share bridge is installed:
+
+1. Open a YouTube video in the YouTube app or another app that can share its YouTube URL.
+2. Tap **Share**.
+3. Choose **Termux**.
+
+Termux opens and displays the program's progress; when processing succeeds, the transcript is saved to `Documents/YouTubeText/`.
+
 ## Development Status
 
 **Current Version:** 1.0.0
