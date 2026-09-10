@@ -126,6 +126,17 @@ downloading the video's audio or video.
 Offline speech recognition, personal-media transcription, cloud processing,
 and remote processing are not part of Version 1.0.
 
+## Project Philosophy
+
+Constellation Transcript is intentionally narrow in scope.
+
+The goal is not to build a general-purpose media platform. The goal is to solve
+one useful problem well: turn intentionally selected YouTube captions into
+clean, portable text with minimal complexity and clear security boundaries.
+
+New capabilities are considered carefully so the project remains understandable,
+auditable, and easy to adapt.
+
 ## Security Design
 
 - Local execution only
