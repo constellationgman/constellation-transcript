@@ -171,3 +171,15 @@ The recommended everyday workflow is:
 
 Constellation Transcript then retrieves available captions and saves the
 verified transcript automatically.
+
+## Feedback and Contributions
+
+Bug reports, compatibility issues, and focused improvement ideas are welcome through GitHub Issues.
+
+Please keep proposed changes aligned with the project's goals: local-first operation,
+minimal complexity, clear security boundaries, and a narrow problem scope.
+
+Large feature expansions, remote services, telemetry, and unrelated platform growth
+are outside the project's current direction.
+
+
