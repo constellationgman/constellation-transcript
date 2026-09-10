@@ -182,4 +182,7 @@ minimal complexity, clear security boundaries, and a narrow problem scope.
 Large feature expansions, remote services, telemetry, and unrelated platform growth
 are outside the project's current direction.
 
+## License
+
+This project is released under the MIT License. See the `LICENSE` file for details.
 
