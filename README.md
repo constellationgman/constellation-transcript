@@ -10,6 +10,15 @@ available YouTube captions into verified plain-text transcripts.
 Its primary purpose is to turn intentionally selected YouTube material into
 portable text suitable for reading, research, and AI-assisted learning.
 
+## Why Constellation Transcript?
+
+Constellation Transcript is built for people who want useful text from YouTube
+without downloading video, uploading media to a cloud service, or running a
+background server.
+
+The project favors a small, auditable codebase, explicit security boundaries,
+and predictable local files over unnecessary complexity.
+
 ## Installation
 
 Constellation Transcript 1.0 is captions-only software for Android/Termux.
